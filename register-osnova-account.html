@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dater</title>
+    <style>
+        body {
+            background-color: rgb(0, 174, 255);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+        }
+
+        .cam {
+            background-color: white;
+            width: 106px;
+            height: 106px;
+            margin-left: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 50px;
+            margin-top: 26px;
+            margin-left: 26px;
+        }
+
+        .name {
+            width: 97%;
+            height: 25px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        button {
+            text-decoration: none;
+            font-size: 20px;
+            background-color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            height: 40px;
+            color: rgb(0, 174, 255);
+            border: 2px solid rgb(0, 174, 255);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            text-align: center;
+            line-height: 0px;
+        }
+
+        button.active {
+            background-color: rgb(0, 143, 209);
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            background-color: rgb(255, 255, 255);
+            padding: 6px 20px;
+            height: 30px;
+            color: rgb(0, 174, 255);
+            border-radius: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<center><h3>Осталось заполнить профиль!</h3></center>
+<br>
+<div class="cam">
+    <label for="imageInput"><img src="cam.png" alt=""></label>
+    <input id="imageInput" type="file" style="display: none;" onchange="displayImage(this)">
+</div>
+<h3 class="text-left">Как вас зовут?</h3>
+<input class="name" type="text" placeholder="Имя">
+<h3>Какие ваши интересы?</h3>
+<button onclick="toggleInterest(this)">Выпить</button>
+<button onclick="toggleInterest(this)">Прогуляться</button>
+<button onclick="toggleInterest(this)">Дорогая еда</button>
+<button onclick="toggleInterest(this)">Богатые</button>
+<button onclick="toggleInterest(this)">Кино</button>
+<button onclick="toggleInterest(this)">Фотографировать</button>
+<button onclick="toggleInterest(this)">Интим</button><br><br><br>
+<center><a href="tinder.html">Найти пару в Dater!</a></center><br>
+
+<script>
+    function displayImage(input) {
+        const file = input.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function toggleInterest(button) {
+        button.classList.toggle('active');
+    }
+</script>
+</body>
+</html>
